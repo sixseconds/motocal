@@ -79,3 +79,5 @@ typings/
 Jetbrains directories
 .idea/
 .vscode/launch.json
+
+database.json
