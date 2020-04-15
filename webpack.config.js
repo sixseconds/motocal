@@ -107,7 +107,8 @@ module.exports = {
      contentBase: [path.join(__dirname, "/dist")],
      compress: true,
      host: HOST,
-     port: 8000
+     port: 8000,
+     disableHostCheck: true
   },
   mode: process.env.NODE_ENV || 'development'
 };

@@ -32,7 +32,7 @@
     "node": ">= 8.11"
   },
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --host 0.0.0.0 --hot --watch --inline",
     "test": "jest",
     "build": "webpack --display-error-details",
     "lint": "eslint webpack.config.js src/*",
@@ -67,5 +67,5 @@
     "watchify": "^3.11.1",
     "webpack-dev-server": "^3.3.1"
   },
-  "proxy":"http://localhost:5000"
+  "proxy":"http://ec2-54-189-120-236.us-west-2.compute.amazonaws.com:5000"
 }
