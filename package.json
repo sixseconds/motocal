@@ -31,7 +31,7 @@
     "node": ">= 8.11"
   },
   "scripts": {
-    "start": "webpack-dev-server --watch --inline",
+    "start": "webpack-dev-server",
     "test": "jest",
     "build": "webpack --display-error-details",
     "lint": "eslint webpack.config.js src/*",
@@ -65,5 +65,6 @@
     "prop-types": "^15.6.1",
     "watchify": "^3.11.1",
     "webpack-dev-server": "^3.3.1"
-  }
+  },
+  "proxy":"http://localhost:5000"
 }
