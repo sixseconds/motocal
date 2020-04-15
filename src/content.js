@@ -90,14 +90,13 @@ var Root = CreateClass({
     },
     getDatacharById: function (id) {
         $.ajax({
-            url: "http://localhost:5000/getdata",
+            url: "getdata.php",
             type: 'POST',
+            dataType: 'text',
             cache: false,
-            crossDomain: true,
-            Header: "Access-Control-Allow-Origin: *",
-            timeout: 50000,
+            timeout: 10000,
             data: {id: id},
-            success: function (data) {
+            success: function (data, datatype) {
                 var initState = JSON.parse(Base64.decode(data));
                 var oldState = this.state;
                 initState["noResultUpdate"] = false;
@@ -122,7 +121,7 @@ var Root = CreateClass({
                 this.setState(initState);
             }.bind(this),
             error: function (xhr, status, err) {
-                alert("Error!:"+status);
+                alert("Error!: IDが不正です. status: ", status, ", error message: ", err.toString());
             }.bind(this)
         });
     },
@@ -691,7 +690,7 @@ var TwitterShareButton = CreateClass({
         }
 
         $.ajax({
-            url: "http://localhost:5000/savedata",
+            url: "getshort.php",
             type: 'POST',
             dataType: 'text',
             cache: false,
