@@ -90,7 +90,7 @@ var Root = CreateClass({
     },
     getDatacharById: function (id) {
         $.ajax({
-            url: "http://ec2-54-189-120-236.us-west-2.compute.amazonaws.com:5000/getdata",
+            url: "/getdata",
             type: 'POST',
             cache: false,
             crossDomain: true,
@@ -691,7 +691,7 @@ var TwitterShareButton = CreateClass({
         }
 
         $.ajax({
-            url: "http://ec2-54-189-120-236.us-west-2.compute.amazonaws.com:5000/savedata",
+            url: "/savedata",
             type: 'POST',
             dataType: 'text',
             cache: false,
