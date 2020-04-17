@@ -8,14 +8,14 @@ CORS(app)
 db = TinyDB('database.json')
 entry = Query()
 
-@app.route('/savedata', methods=["POST"])
+@app.route('/api/savedata', methods=["POST"])
 def savedata():
     data = request.form.get('datachar')
     id = str(len(db)+1)
     db.insert({"id":id, "datachar": data})
     return id
 
-@app.route('/getdata', methods=["POST"])
+@app.route('/api/getdata', methods=["POST"])
 def getdata():
     data = db.search(entry.id == request.form.get('id'))
     send = data[0]["datachar"]
